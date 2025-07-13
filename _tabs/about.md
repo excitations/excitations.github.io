@@ -15,8 +15,6 @@ title: ""
 - [Our Mission](#our-mission)
 - [About the Organization](#about-the-organization)
 - [Membership](#membership)
-- [News & Events](#news--events)
-- [Next Steps](#next-steps)
 
 ---
 
