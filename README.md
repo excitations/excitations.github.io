@@ -1,37 +1,37 @@
-# Chirpy Starter
+# Exitations Organization
 
+
+## Site development
+
+The static website uses the [**Chirpy**][chirpy] Jekyll theme
 [![Gem Version](https://img.shields.io/gem/v/jekyll-theme-chirpy)][gem]&nbsp;
-[![GitHub license](https://img.shields.io/github/license/cotes2020/chirpy-starter.svg?color=blue)][mit]
+[![GitHub license](https://img.shields.io/github/license/excitations/excitations.github.io.svg?color=blue)][mit]
 
-When installing the [**Chirpy**][chirpy] theme through [RubyGems.org][gem], Jekyll can only read files in the folders
-`_data`, `_layouts`, `_includes`, `_sass` and `assets`, as well as a small part of options of the `_config.yml` file
-from the theme's gem. If you have ever installed this theme gem, you can use the command
-`bundle info --path jekyll-theme-chirpy` to locate these files.
+Check out the [Chirpy theme's docs](https://github.com/cotes2020/jekyll-theme-chirpy/wiki).
 
-The Jekyll team claims that this is to leave the ball in the user’s court, but this also results in users not being
-able to enjoy the out-of-the-box experience when using feature-rich themes.
+### Local development
+Install [**Jekyll**][jekyll], clone this repository and run
 
-To fully use all the features of **Chirpy**, you need to copy the other critical files from the theme's gem to your
-Jekyll site. The following is a list of targets:
-
-```shell
-.
-├── _config.yml
-├── _plugins
-├── _tabs
-└── index.html
+```cmd
+~/excitations.github.io $ bundle exec jekyll serve --livereload
 ```
 
-To save you time, and also in case you lose some files while copying, we extract those files/configurations of the
-latest version of the **Chirpy** theme and the [CD][CD] workflow to here, so that you can start writing in minutes.
+### Author new content
+Optionally make use of the [**Jekyll-Compose**](https://github.com/jekyll/jekyll-compose)
+to fill in the required [front matter](https://cirpy.cotes.pages/posts/write-a-new-post)
+which allows
 
-## Usage
+```cmd
+~/excitations.github.io $ bundle exec jekyll post "A New Post"
+```
 
-Check out the [theme's docs](https://github.com/cotes2020/jekyll-theme-chirpy/wiki).
+to create a new Markdown page under `_posts/`.
 
-## Contributing
+Compare [raw Markdown](https://raw.githubusercontent.com/cotes2020/jekyll-theme-chirpy/refs/heads/master/_posts/2019-08-08-text-and-typography.md) to its [rendered result](https://chirpy.cotes.page/posts/text-and-typography) for an idea on what is possible to typeset.
 
-This repository is automatically updated with new releases from the theme repository. If you encounter any issues or want to contribute to its improvement, please visit the [theme repository][chirpy] to provide feedback.
+### Add new pages to the sidebar
+Add new markdown to the `_tabs/` folder, see the existing files' front matter for an example of how to specify order and icon for the new entry.
+
 
 ## License
 
@@ -40,4 +40,5 @@ This work is published under [MIT][mit] License.
 [gem]: https://rubygems.org/gems/jekyll-theme-chirpy
 [chirpy]: https://github.com/cotes2020/jekyll-theme-chirpy/
 [CD]: https://en.wikipedia.org/wiki/Continuous_deployment
-[mit]: https://github.com/cotes2020/chirpy-starter/blob/master/LICENSE
+[mit]: https://github.com/excitations/excitations.github.io/blob/main/LICENSE
+[jekyll]: https://jekyllrb.com

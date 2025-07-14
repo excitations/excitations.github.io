@@ -8,7 +8,7 @@ class Circle:
     x: float
     y: float
     r: float
-    c: str = field(default_factory=lambda:'#00006f')
+    c: str = field(default_factory=lambda:'#6f6f6f')
     
     def svg(self):
         return f'<circle cx="{self.x}" cy="{self.y}" r="{self.r}" fill="{self.c}" />'
@@ -16,7 +16,7 @@ class Circle:
 
 @dataclass
 class Image:
-    objs: list[Circle] = field(default_factory=lambda: [Circle(0, 0, 3.5)])
+    objs: list[Circle] = field(default_factory=list)
     
     def add(self, objs: list[Circle]):
         self.objs += objs
@@ -68,10 +68,12 @@ def xyr(A, B, n=10, s=5, theta=0, color: str= '#000000'):
 def main(output: Path, 
          A: float=6, B: float=3, r0: float=3.5, 
          points: int=6, lobes: int=7, theta: float=0, 
-         color: str = '#00009f',
+         color: str = '#9f9f9f',
          ico: bool = True
          ):
-    image = Image([Circle(0, 0, r0, color)] + xyr(A, B, n=points, s=lobes, theta=theta, color=color))
+    corona = xyr(A, B, n=points, s=lobes, theta=theta, color=color)
+    center = Circle(0, 0, 0.9*(A - max(c.r for c in corona)), color)
+    image = Image([center] + corona)
     with output.open('w') as file:
         file.write(image.svg())
     if ico:
